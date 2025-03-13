@@ -43,6 +43,16 @@ add_action("save_post", "mmp_save_page_metabox_data");
 
 function mmp_save_page_metabox_data($post_id)
 {
+   // check and verify nonce value
+   if(!wp_verify_nonce($_POST['mmp_save_pmetabox_nonce'], 'mmp_save_page_metabox_data')) {
+      return;
+   }
+
+   // check and verify auto save of wordpress
+   if(defined("DOING_AUTOSAVE") && DOING_AUTOSAVE) {
+      return;
+   }
+
    if (isset($_POST['pmeta_title'])) {
       update_post_meta($post_id, "pmeta_title", $_POST["pmeta_title"]);
    }
