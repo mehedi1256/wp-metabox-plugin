@@ -3,7 +3,7 @@
 /**
  * Plugin Name: My Metabox Plugin
  * Plugin URI: https://example.com
- * Description: Adds a custom metabox to the post editor.
+ * Description: This will be the metabox for wordpress pages.
  * Version: 1.0
  * Author: Mehedi Hassan Shovo
  * Author URI: https://example.com  
